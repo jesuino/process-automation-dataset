@@ -1,0 +1,5 @@
+FROM openjdk:17-alpine
+
+COPY target/process-automation-dataset-1.0.0-SNAPSHOT-runner.jar .
+
+ENTRYPOINT ["sh", "-c", "exec java ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -jar process-automation-dataset-1.0.0-SNAPSHOT-runner.jar"] 
